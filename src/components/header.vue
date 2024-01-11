@@ -18,7 +18,7 @@ export default{
             <h1 class="text-danger">BOOLFLIX</h1>
         </div>
         <nav>
-            <input type="text" v-model="store.searchBar">
+            <input type="text" v-model="store.searchBar" @input="$emit('search')">
         </nav>
     </header>
 </template>
