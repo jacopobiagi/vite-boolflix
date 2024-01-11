@@ -10,23 +10,27 @@ export default{
         return{
             store,
         }
-    }
+    },
 }
 
 </script>
 <template>
     <main>
-        <div class="container">
-            <div v-for="element in store.movieList">
+        <div class="container w-100 d-flex flex-wrap">
+            <h2 v-if="store.movieList.length == 0">Inserisci film</h2>
+            <div v-else v-for="element in store.movieList">
                 <Card 
                 :title = 'element.title'
-                :img = 'element.backdrop_path'
+                :img = 'element.poster_path'
                 :desc = 'element.overview'/>
             </div>
+            
         </div>
     </main>
 
 </template>
 <style>
-
+    main{
+        width: 100vw;
+    }
 </style>
