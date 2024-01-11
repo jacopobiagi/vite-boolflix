@@ -1,5 +1,15 @@
 <script>
 
+import {store} from '../store';
+
+export default{
+    data(){
+        return {
+            store,
+        }
+    }
+}
+
 </script>
 <template>
 
@@ -8,7 +18,7 @@
             <h1 class="text-danger">BOOLFLIX</h1>
         </div>
         <nav>
-            <input type="text">
+            <input type="text" v-model="store.searchBar">
         </nav>
     </header>
 </template>
