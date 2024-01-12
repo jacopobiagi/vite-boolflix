@@ -16,9 +16,9 @@ export default{
 </script>
 <template>
     <main>
-        <div class="container w-100 d-flex flex-wrap">
+        <div class="container w-100 d-flex flex-wrap justify-content-center">
             <h2 v-if="store.movieList.length == 0">Inserisci film</h2>
-            <div v-else v-for="element in store.movieList">
+            <div v-else v-for="element in store.movieList" class="container-card">
                 <Card 
                 :title = 'element.title'
                 :img = 'element.poster_path'
@@ -30,8 +30,14 @@ export default{
     </main>
 
 </template>
-<style>
-    main{
-        width: 100vw;
+<style lang="scss" scoped>
+main{
+    h2{
+        padding-top: 10px;
     }
+    .container-card{
+        padding: 5px;
+    }
+}
+
 </style>
