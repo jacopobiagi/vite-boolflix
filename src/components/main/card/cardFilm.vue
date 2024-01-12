@@ -5,6 +5,7 @@ export default{
         title: String,
         img: String,
         desc:String,
+        lang:String,
     }
 }
 </script>
@@ -15,8 +16,17 @@ export default{
                 <img :src="'http://image.tmdb.org/t/p/w342'+img" alt="">
             </div>
             <div class="flip-card-back">
-                <h3>{{ title }}</h3>
-                <p>{{ desc }}</p>
+              <div class="container-flag w-100 d-flex align-items-center justify-content-center">
+                <img v-if="lang == 'en'" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="">
+                <img v-else-if="lang == 'it'" src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="">
+                <img v-else-if="lang == 'fr'" src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="">
+                <img v-else-if="lang == 'ja'" src="https://flagicons.lipis.dev/flags/4x3/jp.svg" alt="">
+                <img v-else-if="lang == 'es'" src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="">
+                <img v-else-if="lang == 'de'" src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="">
+                <img v-else src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAR4AAACwCAMAAADudvHOAAAAM1BMVEXlAAB3AIj/7gD/jQACgSEATP//8gD3bgD/jwD/igD/rgAAeyICgwABXs0ASv82O957AIF+6HPOAAABQUlEQVR4nO3Zt2ECAADEwCfagAn7T+sN1NDejaBWGwAAAAAAAADA934I+yXsRJAnyZPkSfIkeZI8SZ4kT5InyZPkSfIkeZI8SZ4kT5InyZPkSfIkeZI8SZ4kT5In7UbYnbArYUeCPEmeJE+SJ8mT5EnyJHmSPEmeJE+SJ8mT5EnyJHmSPEmeJE+SJ8mT5EnyJHmSPEme5LGnPQg7E+RJ8iR5kjxJniRPkifJk+RJ8iR5kjxJniRPkifJk+RJ8iR5kjxJniRPkifJk+RJ8qT9EfYk7EXYhSBPkifJk+RJ8iR5kjxJniRPkifJk+RJ8iR5kjxJniRPkifJk+RJ8iR5kjxJniRPkiftTdiHsANBniRPkifJk+RJ8iR5kjxJniRPkifJk+RJ8iR5kjxJniRPkifJk+RJ8iR5kjxJniRPkif9A2l2UDuACQJ/AAAAAElFTkSuQmCC" alt="">
+              </div>
+              <h3>{{ title }}</h3>
+              <p>{{ desc }}</p>
             </div>
         </div>
     </div>
@@ -64,5 +74,13 @@ export default{
   transform: rotateY(180deg);
   width: 342px;
   height: 513px;
+}
+.container-flag{
+  height: 70px;
+}
+
+.container-flag img{
+  width: 65px;
+  height: 40px;
 }
 </style>

@@ -22,7 +22,8 @@ export default{
                 <Card 
                 :title = 'element.title'
                 :img = 'element.poster_path'
-                :desc = 'element.overview'/>
+                :desc = 'element.overview'
+                :lang = 'element.original_language'/>
             </div>
             
         </div>
