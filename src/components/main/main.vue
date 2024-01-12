@@ -1,13 +1,13 @@
 <script>
-import {store} from '../../store';
+import { store } from '../../store';
 import Card from './card/cardFilm.vue';
 
-export default{
-    components:{
+export default {
+    components: {
         Card,
     },
-    data(){
-        return{
+    data() {
+        return {
             store,
         }
     },
@@ -19,25 +19,20 @@ export default{
         <div class="container w-100 d-flex flex-wrap justify-content-center">
             <h2 v-if="store.movieList.length == 0">Inserisci film</h2>
             <div v-else v-for="element in store.movieList" class="container-card">
-                <Card 
-                :title = 'element.title'
-                :img = 'element.poster_path'
-                :desc = 'element.overview'
-                :lang = 'element.original_language'/>
+                <Card :title='element.title ? element.title : element.name' :img='element.poster_path'
+                    :desc='element.overview' :lang='element.original_language' :vote="element.vote_average" />
             </div>
-            
         </div>
     </main>
-
 </template>
 <style lang="scss" scoped>
-main{
-    h2{
+main {
+    h2 {
         padding-top: 10px;
     }
-    .container-card{
+
+    .container-card {
         padding: 5px;
     }
 }
-
 </style>
