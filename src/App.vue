@@ -22,6 +22,7 @@ export default{
             let myQuery = `query=${store.searchBar}`;
             let myUrl = store.apiUrl;
             myUrl += myQuery;
+
             axios
                 .get(myUrl)
                 .then(res => {

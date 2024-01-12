@@ -5,11 +5,6 @@ export default{
         title: String,
         img: String,
         desc:String,
-    },
-    data(){
-        return{
-            imageUrl: "http://image.tmdb.org/t/p/w342/" + this.img,
-        }
     }
 }
 </script>
@@ -17,7 +12,7 @@ export default{
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img :src="imageUrl" alt="">
+                <img :src="'http://image.tmdb.org/t/p/w342'+img" alt="">
             </div>
             <div class="flip-card-back">
                 <h3>{{ title }}</h3>
@@ -26,6 +21,7 @@ export default{
         </div>
     </div>
 </template>
+
 <style scoped>
 
 .flip-card {
